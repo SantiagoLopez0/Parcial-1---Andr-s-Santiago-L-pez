@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.userInput = new System.Windows.Forms.TextBox();
+            this.passInput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.iniciarSesionBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -47,19 +48,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Iniciar Sesión";
             // 
-            // textBox1
+            // userInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 211);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 23);
-            this.textBox1.TabIndex = 1;
+            this.userInput.Location = new System.Drawing.Point(84, 211);
+            this.userInput.Name = "userInput";
+            this.userInput.Size = new System.Drawing.Size(237, 23);
+            this.userInput.TabIndex = 1;
             // 
-            // textBox2
+            // passInput
             // 
-            this.textBox2.Location = new System.Drawing.Point(84, 330);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(237, 23);
-            this.textBox2.TabIndex = 1;
+            this.passInput.Location = new System.Drawing.Point(84, 330);
+            this.passInput.Name = "passInput";
+            this.passInput.PasswordChar = '*';
+            this.passInput.Size = new System.Drawing.Size(237, 23);
+            this.passInput.TabIndex = 1;
             // 
             // label2
             // 
@@ -81,15 +83,27 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña";
             // 
+            // iniciarSesionBtn
+            // 
+            this.iniciarSesionBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.iniciarSesionBtn.Location = new System.Drawing.Point(84, 390);
+            this.iniciarSesionBtn.Name = "iniciarSesionBtn";
+            this.iniciarSesionBtn.Size = new System.Drawing.Size(237, 34);
+            this.iniciarSesionBtn.TabIndex = 3;
+            this.iniciarSesionBtn.Text = "Iniciar Sesión";
+            this.iniciarSesionBtn.UseVisualStyleBackColor = true;
+            this.iniciarSesionBtn.Click += new System.EventHandler(this.iniciarSesionBtn_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 490);
+            this.Controls.Add(this.iniciarSesionBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.passInput);
+            this.Controls.Add(this.userInput);
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.Text = "Form1";
@@ -102,10 +116,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox userInput;
+        private System.Windows.Forms.TextBox passInput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button iniciarSesionBtn;
     }
 }
 

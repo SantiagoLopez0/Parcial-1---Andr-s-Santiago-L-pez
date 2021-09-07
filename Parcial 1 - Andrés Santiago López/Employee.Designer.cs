@@ -28,30 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.precioVentaInput = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cantidadPanesInput = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.tipoDePanesCheckList = new System.Windows.Forms.CheckedListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nombreClienteInput = new System.Windows.Forms.TextBox();
+            this.cedulaInput = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.volverLoginBtn = new System.Windows.Forms.Button();
+            this.registrarVentaBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.registrarVentaBtn = new System.Windows.Forms.Button();
-            this.volverLoginBtn = new System.Windows.Forms.Button();
+            this.fechaInput = new System.Windows.Forms.DateTimePicker();
+            this.registroRtxt = new System.Windows.Forms.RichTextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.precioVentaInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cantidadPanesInput)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cedulaInput)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,9 +71,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown3);
+            this.groupBox1.Controls.Add(this.precioVentaInput);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.cantidadPanesInput);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -81,9 +84,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producto";
             // 
+            // precioVentaInput
+            // 
+            this.precioVentaInput.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.precioVentaInput.Location = new System.Drawing.Point(6, 345);
+            this.precioVentaInput.Name = "precioVentaInput";
+            this.precioVentaInput.Size = new System.Drawing.Size(266, 33);
+            this.precioVentaInput.TabIndex = 2;
+            this.precioVentaInput.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+            this.precioVentaInput.Validating += new System.ComponentModel.CancelEventHandler(this.precioVentaInput_Validating);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(6, 292);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(210, 50);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Precio Total de la venta\r\n(Sin signos ni puntos)";
+            this.label6.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // cantidadPanesInput
+            // 
+            this.cantidadPanesInput.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cantidadPanesInput.Location = new System.Drawing.Point(6, 74);
+            this.cantidadPanesInput.Name = "cantidadPanesInput";
+            this.cantidadPanesInput.Size = new System.Drawing.Size(266, 33);
+            this.cantidadPanesInput.TabIndex = 2;
+            this.cantidadPanesInput.Validating += new System.ComponentModel.CancelEventHandler(this.cantidadPanesInput_Validating);
+            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkedListBox1);
+            this.groupBox3.Controls.Add(this.tipoDePanesCheckList);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.Location = new System.Drawing.Point(6, 138);
             this.groupBox3.Name = "groupBox3";
@@ -92,34 +125,47 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Panes Seleccionados";
             // 
-            // checkedListBox1
+            // tipoDePanesCheckList
             // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.tipoDePanesCheckList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tipoDePanesCheckList.FormattingEnabled = true;
+            this.tipoDePanesCheckList.Items.AddRange(new object[] {
             "Aliñado",
             "No Aliñado",
             "Especial"});
-            this.checkedListBox1.Location = new System.Drawing.Point(6, 37);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(267, 76);
-            this.checkedListBox1.TabIndex = 0;
+            this.tipoDePanesCheckList.Location = new System.Drawing.Point(6, 37);
+            this.tipoDePanesCheckList.Name = "tipoDePanesCheckList";
+            this.tipoDePanesCheckList.Size = new System.Drawing.Size(267, 76);
+            this.tipoDePanesCheckList.TabIndex = 0;
             // 
-            // textBox2
+            // label5
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(6, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(266, 33);
-            this.textBox2.TabIndex = 1;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(6, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(169, 25);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Cantidad de Panes";
+            this.label5.Click += new System.EventHandler(this.label3_Click);
             // 
-            // numericUpDown2
+            // nombreClienteInput
             // 
-            this.numericUpDown2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericUpDown2.Location = new System.Drawing.Point(6, 166);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(266, 33);
-            this.numericUpDown2.TabIndex = 2;
+            this.nombreClienteInput.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nombreClienteInput.Location = new System.Drawing.Point(6, 74);
+            this.nombreClienteInput.Name = "nombreClienteInput";
+            this.nombreClienteInput.Size = new System.Drawing.Size(266, 33);
+            this.nombreClienteInput.TabIndex = 1;
+            this.nombreClienteInput.Validating += new System.ComponentModel.CancelEventHandler(this.nombreClienteInput_Validating);
+            // 
+            // cedulaInput
+            // 
+            this.cedulaInput.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cedulaInput.Location = new System.Drawing.Point(6, 166);
+            this.cedulaInput.Name = "cedulaInput";
+            this.cedulaInput.Size = new System.Drawing.Size(266, 33);
+            this.cedulaInput.TabIndex = 2;
+            this.cedulaInput.Validating += new System.ComponentModel.CancelEventHandler(this.cedulaInput_Validating);
             // 
             // groupBox2
             // 
@@ -128,9 +174,9 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
+            this.groupBox2.Controls.Add(this.fechaInput);
+            this.groupBox2.Controls.Add(this.nombreClienteInput);
+            this.groupBox2.Controls.Add(this.cedulaInput);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(338, 85);
             this.groupBox2.Name = "groupBox2";
@@ -138,6 +184,26 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cliente";
+            // 
+            // volverLoginBtn
+            // 
+            this.volverLoginBtn.Location = new System.Drawing.Point(70, 359);
+            this.volverLoginBtn.Name = "volverLoginBtn";
+            this.volverLoginBtn.Size = new System.Drawing.Size(153, 33);
+            this.volverLoginBtn.TabIndex = 5;
+            this.volverLoginBtn.Text = "Cerrar Sesión";
+            this.volverLoginBtn.UseVisualStyleBackColor = true;
+            this.volverLoginBtn.Click += new System.EventHandler(this.volverLoginBtn_Click);
+            // 
+            // registrarVentaBtn
+            // 
+            this.registrarVentaBtn.Location = new System.Drawing.Point(70, 320);
+            this.registrarVentaBtn.Name = "registrarVentaBtn";
+            this.registrarVentaBtn.Size = new System.Drawing.Size(153, 33);
+            this.registrarVentaBtn.TabIndex = 5;
+            this.registrarVentaBtn.Text = "Registrar Venta";
+            this.registrarVentaBtn.UseVisualStyleBackColor = true;
+            this.registrarVentaBtn.Click += new System.EventHandler(this.registrarVentaBtn_Click);
             // 
             // label4
             // 
@@ -170,84 +236,33 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Nombre y Apellidos";
             // 
-            // dateTimePicker1
+            // fechaInput
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 257);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(266, 33);
-            this.dateTimePicker1.TabIndex = 3;
+            this.fechaInput.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fechaInput.Location = new System.Drawing.Point(6, 257);
+            this.fechaInput.Name = "fechaInput";
+            this.fechaInput.Size = new System.Drawing.Size(266, 33);
+            this.fechaInput.TabIndex = 3;
+            this.fechaInput.Validating += new System.ComponentModel.CancelEventHandler(this.fechaInput_Validating);
             // 
-            // label5
+            // registroRtxt
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(6, 46);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Cantidad de Panes";
-            this.label5.Click += new System.EventHandler(this.label3_Click);
+            this.registroRtxt.Location = new System.Drawing.Point(622, 98);
+            this.registroRtxt.Name = "registroRtxt";
+            this.registroRtxt.Size = new System.Drawing.Size(401, 409);
+            this.registroRtxt.TabIndex = 4;
+            this.registroRtxt.Text = "";
             // 
-            // numericUpDown1
+            // errorProvider
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericUpDown1.Location = new System.Drawing.Point(6, 74);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(266, 33);
-            this.numericUpDown1.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(6, 292);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(210, 25);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Precio Total de la venta";
-            this.label6.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericUpDown3.Location = new System.Drawing.Point(6, 320);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(266, 33);
-            this.numericUpDown3.TabIndex = 2;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(622, 98);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(401, 409);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
-            // 
-            // registrarVentaBtn
-            // 
-            this.registrarVentaBtn.Location = new System.Drawing.Point(70, 320);
-            this.registrarVentaBtn.Name = "registrarVentaBtn";
-            this.registrarVentaBtn.Size = new System.Drawing.Size(153, 33);
-            this.registrarVentaBtn.TabIndex = 5;
-            this.registrarVentaBtn.Text = "Registrar Venta";
-            this.registrarVentaBtn.UseVisualStyleBackColor = true;
-            // 
-            // volverLoginBtn
-            // 
-            this.volverLoginBtn.Location = new System.Drawing.Point(70, 359);
-            this.volverLoginBtn.Name = "volverLoginBtn";
-            this.volverLoginBtn.Size = new System.Drawing.Size(153, 33);
-            this.volverLoginBtn.TabIndex = 5;
-            this.volverLoginBtn.Text = "Cerrar Sesión";
-            this.volverLoginBtn.UseVisualStyleBackColor = true;
+            this.errorProvider.ContainerControl = this;
             // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 519);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.registroRtxt);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -255,12 +270,13 @@
             this.Text = "Employee";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.precioVentaInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cantidadPanesInput)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cedulaInput)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,21 +286,22 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.TextBox nombreClienteInput;
+        private System.Windows.Forms.NumericUpDown cedulaInput;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker fechaInput;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox tipoDePanesCheckList;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown precioVentaInput;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown cantidadPanesInput;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button volverLoginBtn;
         private System.Windows.Forms.Button registrarVentaBtn;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox registroRtxt;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

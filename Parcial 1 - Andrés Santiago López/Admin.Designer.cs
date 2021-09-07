@@ -88,6 +88,7 @@
             this.volverLoginAdminBtn.TabIndex = 5;
             this.volverLoginAdminBtn.Text = "Cerrar Sesión";
             this.volverLoginAdminBtn.UseVisualStyleBackColor = true;
+            this.volverLoginAdminBtn.Click += new System.EventHandler(this.volverLoginAdminBtn_Click);
             // 
             // Admin
             // 
